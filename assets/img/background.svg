@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1776 999" width="1776px" height="999px">
+<defs>
+<style type="text/css">
+@font-face{font-family:'Plgo';src: url('../css/Plgo.woff2') format('woff2');}
+@font-face{font-family:'notdef';src: url('data:font/woff2;base64,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') format('woff2');}
+.path{fill:#0a0a0a !important;}
+.text{fill:#121212 !important;filter: url(#text);}
+</style>
+  <filter id="path"><feFlood flood-color="#0a0a0a"/></filter>
+  <filter id="text"><feColorMatrix type="matrix" values="
+        0 0 0 0 0.01
+        0 0 0 0 0.01
+        0 0 0 0 0.01
+        0 0 0 0.5 0"/></filter>
+</defs>
+<path class="path" filter="url(#path)" d="M0 0h1776v999H0z"/>
+<text class="text" filter="url(#text)" x="106" y="118" style="font-family:'Plgo','notdef';font-size:74.7px;line-height:.955" transform="rotate(11 2110 -456)">
+<tspan x="106" y="118">𲎰𲎱𲎲𲎳𲎴𲎵𲎶𲎷𲎸𲎹𲎺𲎻𲎼𲎽𲎾𲎿𲏀𲏁𲏂𲏃𲏄𲏅𲏆𲏇𲏈𲏉</tspan>
+<tspan x="106" y="190">𲏊𲏋𲏌𲏍𲏎𲏏𲏐𲏑𲏒𲏓𲏔𲏕𲏖𲏗𲏘𲏙𲏚𲏛𲏜𲏝𲏞𲏟𲏠𲏡𲏢𲏣</tspan>
+<tspan x="106" y="261">𲏤𲏥𲏦𲏧𲏨𲏩𲏪𲏫𲏬𲏭𲏮𲏯𲏰𲏱𲏲𲏳𲏴𲏵𲏶𲏷𲏸𲏹𲏺𲏻𲏼𲏽</tspan>
+<tspan x="106" y="332">𲏾𲏿𲐀𲐁𲐂𲐃𲐄𲐅𲐆𲐇𲐈𲐉𲐊𲐋𲐌𲐍𲐎𲐏𲐐𲐑𲐒𲐓𲐔𲐕𲐖𲐗</tspan>
+<tspan x="106" y="404">𲐘𲐙𲐚𲐛𲐜𲐝𲐞𲐟𲐠𲐡𲐢𲐣𲐤𲐥𲐦𲐧𲐨𲐩𲐪𲐫𲐬𲐭𲐮𲐯𲐰𲐱</tspan>
+<tspan x="106" y="475">𲐲𲐳𲐴𲐵𲐶𲐷𲐸𲐹𲐺𲐻𲐼𲐽𲐾𲐿𲑀𲑁𲑂𲑃𲑄𲑅𲑆𲑇𲑈𲑉𲑊𲑋</tspan>
+<tspan x="106" y="546">𲑌𲑍𲑎𲑏𲑐𲑑𲑒𲑓𲑔𲑕𲑖𲑗𲑘𲑙𲑚𲑛𲑜𲑝𲑞𲑟𲑠𲑡𲑢𲑣𲑤𲑥</tspan>
+<tspan x="106" y="618">𲑦𲑧𲑨𲑩𲑪𲑫𲑬𲑭𲑮𲑯𲑰𲑱𲑲𲑳𲑴𲑵𲑶𲑷𲑸𲑹𲑺𲑻𲑼𲑽𲑾𲑿</tspan>
+<tspan x="106" y="689">𲒀𲒁𲒂𲒃𲒄𲒅𲒆𲒇𲒈𲒉𲒊𲒋𲒌𲒍𲒎𲒏𲒐𲒑𲒒𲒓𲒔𲒕𲒖𲒗𲒘𲒙</tspan>
+<tspan x="106" y="760">𲒚𲒛𲒜𲒝𲒞𲒟𲒠𲒡𲒢𲒣𲒤𲒥𲒦𲒧𲒨𲒩𲒪𲒫𲒬𲒭𲒮𲒯𲒰𲒱𲒲𲒳</tspan>
+<tspan x="106" y="832">𲒴𲒵𲒶𲒷𲒸𲒹𲒺𲒻𲒼𲒽𲒾𲒿𲓀𲓁𲓂𲓃𲓄𲓅𲓆𲓇𲓈𲓉𲓊𲓋𲓌𲓍</tspan>
+<tspan x="106" y="903">𲓎𲓏𲓐𲓑𲓒𲓓𲓔𲓕𲓖𲓗𲓘𲓙𲓚𲓛𲓜𲓝𲓞𲓟𲓠𲓡𲓢𲓣𲓤𲓥𲓦𲓧</tspan>
+<tspan x="106" y="975">𲓨𲓩𲓪𲓫𲓬𲓭𲓮𲓯𲓰𲓱𲓲𲓳𲓴𲓵𲓶𲓷𲓸𲓹𲓺𲓻𲓼𲓽𲓾𲓿𲔀𲔁</tspan>
+<tspan x="106" y="1046">𲔂𲔃𲔄𲔅𲔆𲔇𲔈𲔉𲔊𲔋𲔌𲔍𲔎𲔏𲔐𲔑𲔒𲔓𲔔𲔕𲔖𲔗𲔘𲔙𲔚𲔛</tspan>
+<tspan x="106" y="1117">𲔜𲔝𲔞𲔟𲔠𲔡𲔢𲔣𲔤𲔥𲔦𲔧𲔨𲔩𲔪𲔫𲔬𲔭𲔮𲔯𲔰𲔱𲔲𲔳𲔴𲔵</tspan>
+<tspan x="106" y="1189">𲔶𲔷𲔸𲔹𲔺𲔻𲔼𲔽𲔾𲔿𲕀𲕁𲕂𲕃𲕄𲕅𲕆𲕇𲕈𲕉𲕊𲕋𲕌𲕍𲕎𲕏</tspan>
+<tspan x="106" y="1260">𲕐𲕑𲕒𲕓𲕔𲕕𲕖𲕗𲕘𲕙𲕚𲕛𲕜𲕝𲕞𲕟𲕠𲕡𲕢𲕣𲕤𲕥𲕦𲕧𲕨𲕩</tspan>
+<tspan x="106" y="1331">𲕪𲕫𲕬𲕭𲕮𲕯𲕰𲕱𲕲𲕳𲕴𲕵𲕶𲕷𲕸𲕹𲕺𲕻𲕼𲕽𲕾𲕿𲖀𲖁𲖂𲖃</tspan>
+<tspan x="106" y="1403">𲖄𲖅𲖆𲖇𲖈</tspan>
+<rect width="100%" height="100%" fill="transparent" />
+</text>
+</svg>

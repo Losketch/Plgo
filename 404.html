@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:700");
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+	color: inherit;
+}
+
+::selection {
+	background: rgba(0, 0, 0, 0);
+	color: #08d9d6;
+}
+
+body {
+	background-image: linear-gradient(120deg, #004988 0%, #000 90%), url(./assets/img/background.svg);
+	background-position: center;
+	background-blend-mode: color; /* overlay */
+	background-size: cover;
+	height: 100vh;
+	z-index: 1
+}
+
+h1, h1::selection {
+	font-size: 45vw;
+	text-align: center;
+	position: fixed;
+	width: 100vw;
+	z-index: 1;
+	color: #ffffff26;
+	text-shadow: 0 0 50px rgba(0, 0, 0, 0.07);
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+	font-family: "Montserrat", monospace;
+	pointer-events: none;
+}
+
+div {
+	background: rgba(0, 0, 0, 0);
+	width: 70vw;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	margin: 0 auto;
+	padding: 30px 30px 10px;
+	box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
+	z-index: 3;
+}
+
+p {
+	font-family: "Share Tech Mono", monospace;
+	color: #f5f5f5;
+	margin: 0 0 20px;
+	font-size: 17px;
+	line-height: 1.2;
+}
+
+span {
+	color: #f0c674;
+}
+
+i {
+	color: #8ad3ca;
+}
+
+div a {
+	text-decoration: none;
+}
+
+b {
+	color: #76a5ff;
+}
+
+a.avatar {
+	position: fixed;
+	bottom: 15px;
+	right: -100px;
+	-webkit-animation: slide 0.5s 4.5s forwards;
+			animation: slide 0.5s 4.5s forwards;
+	display: block;
+	z-index: 4
+}
+
+a.avatar img {
+	border-radius: 100%;
+	width: 44px;
+	border: 2px solid white;
+}
+
+@-webkit-keyframes slide {
+	from {
+		right: -100px;
+		-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+		opacity: 0;
+	}
+	to {
+		right: 15px;
+		-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+		opacity: 1;
+	}
+}
+
+@keyframes slide {
+	from {
+		right: -100px;
+		-webkit-transform: rotate(360deg);
+				transform: rotate(360deg);
+		opacity: 0;
+	}
+	to {
+		right: 15px;
+		-webkit-transform: rotate(0deg);
+				transform: rotate(0deg);
+		opacity: 1;
+	}
+}
+
+@keyframes blink {
+	0%, 100% {opacity: 1;}
+	50% {opacity: 0;}
+}
+font {
+	display: inline-block;
+	animation: blink 1s step-end infinite;
+}
+font::selection {
+	background: #08d9d6;
+}
+</style>
+</head>
+<body>
+<h1>404</h1>
+<div>
+	<p>> <span>ERROR CODE</span>: "<i>HTTP 404 Not Found</i>"</p>
+	<p>> <span>ERROR DESCRIPTION</span>: "<i>The requested resource could not be found on this server.</i>"</p>
+	<p>> <span>ERROR POSSIBLY CAUSED BY</span>: [<b>Incorrect URL or the page has been removed</b>...]</p>
+	<p>> <span>If you believe this URL is valid, please check it for typos or send the URL to the webmaster email for further assistance.</span></p>
+	<p>> <span>SOME PAGES ON THIS SERVER THAT YOU CAN ACCESS</span>: [<a href="/">Home</a>]</p>
+	<p>>  The purpose of this page is to publicize the fonts and downloads acceleration, please do not abuse it.</p>
+	<p>> <span>错误码</span>: "<i>页面未找到</i>"</p>
+	<p>> <span>错误描述</span>: "<i>请求的资源在此服务器上未找到。</i>"</p>
+	<p>> <span>可能由以下原因造成的错误</span>: [<b>URL 错误或页面已被移除</b>...]</p>
+	<p>> <span>若您认为该网址是有效的，请检查是否有错别字，或将网址发送至站长邮箱以获得进一步帮助。</span></p>
+	<p>> <span>本服务器上的一些页面，你可以访问</span>: [<a href="/">主页</a>]</p>
+	<p>> 本页面初衷为宣传字体并进行下载加速，请勿滥用<font>_</font></p>
+</div>
+<script>
+let div = document.getElementsByTagName('div')[0];
+let str = div.innerHTML.toString();
+let i = 0;
+div.innerHTML = "";
+
+let interval = 10;
+
+let intervalId = setInterval(() => {
+	i++;
+	div.innerHTML = str.slice(0, i) + "_";
+	if (i >= str.length) {
+		clearInterval(intervalId);
+		div.innerHTML = str;
+	}
+}, interval);
+</script>
+</body>
+</html>

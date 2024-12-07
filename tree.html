@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tree</title>
+<style>
+:root {
+    --bg-color: #222;
+    --text-color: #ccc;
+    --highlight-color: #3b78ff;
+    --hover-color: #c48700;
+    --file-hover-color: #333;
+    --permissions-color: #c00;
+}
+
+::selection {
+	background: rgb(243,243,243);
+	color: rgb(51,51,51);
+}
+.tree li > span::selection {
+	color: rgb(196,135,0);
+}
+.tree li.file > span::selection {
+	color: rgb(51, 51, 51);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: inherit;
+}
+
+body {
+    background: var(--bg-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: monospace;
+    color: var(--text-color);
+}
+
+.container {
+    width: 70vw;
+    height: 85vh;
+    padding: 30px;
+    box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.container::-webkit-scrollbar {
+    width: 10px;
+}
+.container::-webkit-scrollbar-track {
+    background: #333;
+}
+.container::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 5px;
+}
+.container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.2;
+}
+
+.tree {
+    list-style-type: none;
+}
+
+.tree li {
+    margin: 10px 0;
+    padding-left: 24px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.tree li::before, .tree li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.tree li::before {
+    border-top: 1px solid #999;
+    top: 12px;
+    width: 16px;
+    height: 0;
+}
+
+.tree li::after {
+    border-left: 1px solid #999;
+    height: 100%;
+    width: 0;
+    top: 0;
+}
+
+.tree li:last-child::after {
+    height: 12px;
+}
+
+.tree li > span {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+}
+
+.tree li.folder > span {
+    color: var(--highlight-color);
+}
+
+.tree li.file > span {
+    color: var(--text-color);
+}
+
+.tree li > span:hover {
+    background-color: #e0e0e0;
+    transform: translateX(5px);
+}
+
+.tree li.folder > span:hover {
+    color: var(--hover-color);
+}
+
+.tree li.file > span:hover {
+    color: var(--file-hover-color);
+}
+
+.tree li > span::before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.tree li.folder > span::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233b78ff"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>');
+}
+
+.tree li.file > span::before {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ccc"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>');
+}
+
+@keyframes blink {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0;}
+}
+.cursor {
+    display: inline-block;
+    animation: blink 1s step-end infinite;
+}
+
+.tree li.permissions > span {
+    color: var(--permissions-color);
+    transition: unset;
+}
+.tree li.permissions > span:hover {
+    background-color: unset;
+    color: var(--permissions-color);
+    transform: unset;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <p> </p>
+  <p>>tree↵</p>
+  <ul class="tree">
+        <li class="folder">
+            <span>/</span>
+            <ul>
+                <li class="folder">
+                    <span>assets</span>
+                    <ul>
+                        <li class="folder">
+                            <span>css</span>
+                            <ul>
+                                <li class="folder permissions"><span title="403 Forbidden">base</span></li>
+                                <li class="folder permissions"><span title="403 Forbidden">layouts</span></li>
+                                <li class="folder permissions"><span title="403 Forbidden">modules</span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/css/main.css">main.css</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/css/main.sass">main.sass</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/css/Plgo.woff2">Plgo.woff2</a></span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="folder">
+                            <span>img</span>
+                            <ul>
+                                <li class="file"><span><a draggable="false" href="./assets/img/about-history.webp">about-history.webp</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/about-philosophy.webp">about-philosophy.webp</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/about-visual.png">about-visual.png</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/about-winners.webp">about-winners.webp</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/background.svg">background.svg</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/background.webp">background.webp</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/contact-visual.svg">contact-visual.svg</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/introduction-visual.png">introduction-visual.png</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/img/logo.svg">logo.svg</a></span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="folder">
+                            <span>js</span>
+                            <ul>
+                                <li class="folder">
+                                    <span>vendor</span>
+                                    <ul>
+                                        <li class="file"><span><a draggable="false" href="./assets/js/vendor/hammer-2.0.8.js">hammer-2.0.8.js</a></span></li>
+                                        <li class="file"><span><a draggable="false" href="./assets/js/vendor/jquery-2.2.4.min.js">jquery-2.2.4.min.js</a></span></li>
+                                    </ul>
+                                </li>
+                                <li class="file"><span><a draggable="false" href="./assets/js/functions.js">functions.js</a></span></li>
+                                <li class="file"><span><a draggable="false" href="./assets/js/functions-min.js">functions-min.js</a></span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="file"><span><a draggable="false" href="./404.html">404.html</a></span></li>
+                <li class="file"><span><a draggable="false" href="./README.md">README.md</a></span></li>
+                <li class="file"><span><a draggable="false" href="./index.html">index.html</a></span></li>
+                <li class="file"><span><a draggable="false" href="./tree.html">tree.html</a></span></li>
+            </ul>
+        </li>
+    </ul>
+  </p>
+  <p>><span class="cursor">_</span></p>
+</div>
+<script>
+const container = document.querySelector('.container');
+const content = container.innerHTML;
+let i = 0;
+container.innerHTML = "";
+
+const interval = 1;
+
+const typeWriter = setInterval(() => {
+    if (i < content.length) {
+        container.innerHTML = content.slice(0, i) + '<span class="cursor">_</span>';
+        i++;
+    } else {
+        clearInterval(typeWriter);
+        container.innerHTML = content;
+    }
+}, interval);
+</script>
+</body>
+</html>
