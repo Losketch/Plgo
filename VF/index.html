@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<title>遍黑体VF（体验版）</title>
+	<script src="../../fun-html/src/js/m3ui.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div>
+		<main>
+			<div>
+				<div id="svgContainer"></div>
+				<div class="input-group">
+					<md-filled-text-field id="hexInput" label="小写16进制数值" value="323b9"></md-filled-text-field>
+					<md-filled-button id="loadSVGButton">加载SVG</md-filled-button>
+				</div>
+			</div>
+			<div>
+				<div class="input-group">
+					<md-filled-text-field id="strokeWidth100" label="stroke-width (100)" value="4.2rem"></md-filled-text-field>
+					<md-filled-text-field id="strokeWidth1000" label="stroke-width (1000)" value="4.2rem"></md-filled-text-field>
+				</div>
+				<div class="input-group">
+					<md-filled-text-field id="strokeColorLow" label="stroke颜色 (<=400)" value="white"></md-filled-text-field>
+					<md-filled-text-field id="strokeColorHigh" label="stroke颜色 (>400)" value="currentColor"></md-filled-text-field>
+				</div>
+				<div>
+					<md-divider></md-divider>
+					<md-filled-tonal-button id="changeStyleButton" class="shadow-button" value="">改变</md-filled-tonal-button>
+					<md-list-item>字重<md-slider labeled slot="end" id="strokeWidthSlider" min="100" max="1000" value="400" step="2"></md-slider></md-list-item>
+				</div>
+			</div>
+		</main>
+	</div>
+	<script src="./script.js"></script>
+</body>
+</html>
