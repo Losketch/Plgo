@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>tree</title>
+<title>tree ↵</title>
 <style>
 :root {
-    --bg-color: #222;
-    --text-color: #ccc;
-    --highlight-color: #3b78ff;
-    --hover-color: #c48700;
-    --file-hover-color: #333;
-    --permissions-color: #c00;
+  --bg-color: #222;
+  --text-color: #ccc;
+  --highlight-color: #3b78ff;
+  --hover-color: #c48700;
+  --file-hover-color: #333;
+  --permissions-color: #c00;
 }
 
 ::selection {
@@ -26,164 +26,189 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
-    color: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  color: inherit;
 }
 
 body {
-    background: var(--bg-color);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: monospace;
-    color: var(--text-color);
+  background: var(--bg-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: monospace;
+  color: var(--text-color);
 }
 
 .container {
-    width: 70vw;
-    height: 85vh;
-    padding: 30px;
-    box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
-    overflow-y: auto;
+  width: 70vw;
+  height: 85vh;
+  padding: 30px;
+  box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
 }
 
 .container::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 .container::-webkit-scrollbar-track {
-    background: #333;
+  background: #333;
 }
 .container::-webkit-scrollbar-thumb {
-    background: #666;
-    border-radius: 5px;
+  background: #666;
+  border-radius: 5px;
 }
 .container::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 p {
-    margin-bottom: 20px;
-    font-size: 17px;
-    line-height: 1.2;
+  margin-bottom: 20px;
+  font-size: 17px;
+  line-height: 1.2;
 }
 
 .tree {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .tree li {
-    margin: 10px 0;
-    padding-left: 24px;
-    position: relative;
-    transition: all 0.2s ease-in-out;
+  margin: 10px 0;
+  padding-left: 24px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
 }
 
 .tree li::before, .tree li::after {
-    content: '';
-    position: absolute;
-    left: 0;
+  content: '';
+  position: absolute;
+  left: 0;
 }
 
 .tree li::before {
-    border-top: 1px solid #999;
-    top: 12px;
-    width: 16px;
-    height: 0;
+  border-top: 1px solid #999;
+  top: 12px;
+  width: 16px;
+  height: 0;
 }
 
 .tree li::after {
-    border-left: 1px solid #999;
-    height: 100%;
-    width: 0;
-    top: 0;
+  border-left: 1px solid #999;
+  height: 100%;
+  width: 0;
+  top: 0;
 }
 
 .tree li:last-child::after {
-    height: 12px;
+  height: 12px;
 }
 
 .tree li > span {
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 3px;
-    transition: all 0.2s ease-in-out;
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
 }
 
 .tree li.folder > span {
-    color: var(--highlight-color);
+  color: var(--highlight-color);
 }
 
 .tree li.file > span {
-    color: var(--text-color);
+  color: var(--text-color);
 }
 
 .tree li > span:hover {
-    background-color: #e0e0e0;
-    transform: translateX(5px);
+  background-color: #e0e0e0;
+  transform: translateX(5px);
 }
 
 .tree li.folder > span:hover {
-    color: var(--hover-color);
+  color: var(--hover-color);
 }
 
 .tree li.file > span:hover {
-    color: var(--file-hover-color);
+  color: var(--file-hover-color);
 }
 
 .tree li > span::before {
-    content: '';
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    vertical-align: middle;
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
 
 .tree li.folder > span::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233b78ff"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%233b78ff"><path d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z"/></svg>');
 }
 
 .tree li.file > span::before {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ccc"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ccc"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>');
 }
 
 @keyframes blink {
-    0%, 100% {opacity: 1;}
-    50% {opacity: 0;}
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
 }
 .cursor {
-    display: inline-block;
-    animation: blink 1s step-end infinite;
+  display: inline-block;
+  animation: blink 1s linear(0 0%, 0 0%) infinite;
 }
 
 .tree li.permissions > span {
-    color: var(--permissions-color);
-    transition: unset;
+  color: var(--permissions-color);
+  transition: unset;
+  cursor: not-allowed;
 }
 .tree li.permissions > span:hover {
-    background-color: unset;
-    color: var(--permissions-color);
-    transform: unset;
+  background-color: unset;
+  color: var(--permissions-color);
+  transform: unset;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+  animation: none !important;
+  transition: none !important;
+  }
+  .container {
+    scroll-behavior: auto;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 95vw;
+    padding: 20px;
+    font-size: 14px;
+  }
+  
+  .tree li {
+    padding-left: 20px;
+  }
+  
+  p {
+    font-size: 15px;
+  }
 }
 </style>
 </head>
 <body>
 <div class="container">
   <p> </p>
-  <p>>tree↵</p>
+  <p>>tree ↵</p>
   <ul class="tree">
         <li class="folder">
             <span>/</span>
@@ -194,11 +219,10 @@ p {
                         <li class="folder">
                             <span>css</span>
                             <ul>
-                                <li class="folder permissions"><span title="403 Forbidden">base</span></li>
+                                <!--li class="folder permissions"><span title="403 Forbidden">base</span></li>
                                 <li class="folder permissions"><span title="403 Forbidden">layouts</span></li>
-                                <li class="folder permissions"><span title="403 Forbidden">modules</span></li>
+                                <li class="folder permissions"><span title="403 Forbidden">modules</span></li-->
                                 <li class="file"><span><a draggable="false" href="./assets/css/main.css">main.css</a></span></li>
-                                <li class="file"><span><a draggable="false" href="./assets/css/main.sass">main.sass</a></span></li>
                                 <li class="file"><span><a draggable="false" href="./assets/css/Plgo.woff2">Plgo.woff2</a></span></li>
                             </ul>
                         </li>
@@ -236,6 +260,18 @@ p {
                         </li>
                     </ul>
                 </li>
+
+                <li class="folder">
+                    <span>VF</span>
+                    <ul>
+                        <li class="file"><span><a draggable="false" href="./VF/index.html">index.html</a></span></li>
+                        <li class="file"><span><a draggable="false" href="./VF/m3ui.js">m3ui.js</a></span></li>
+                        <li class="file"><span><a draggable="false" href="./VF/m3ui.js.LICENSE.txt">m3ui.js.LICENSE.txt</a></span></li>
+                        <li class="file"><span><a draggable="false" href="./VF/script.js">script.js</a></span></li>
+                        <li class="file"><span><a draggable="false" href="./VF/style.css">style.css</a></span></li>
+                    </ul>
+                </li>
+
                 <li class="file"><span><a draggable="false" href="./404.html">404.html</a></span></li>
                 <li class="file"><span><a draggable="false" href="./README.md">README.md</a></span></li>
                 <li class="file"><span><a draggable="false" href="./index.html">index.html</a></span></li>
@@ -247,22 +283,150 @@ p {
   <p>><span class="cursor">_</span></p>
 </div>
 <script>
-const container = document.querySelector('.container');
-const content = container.innerHTML;
-let i = 0;
-container.innerHTML = "";
+class TreeRenderer {
+  constructor() {
+    this.container = document.querySelector('.container');
+    this.content = this.container.innerHTML;
+    this.currentIndex = 0;
+    this.typewriterSpeed = 1;
+    this.isComplete = false;
+    this.currentContent = '';
+    this.init();
+  }
 
-const interval = 1;
+  init() {
+    this.container.innerHTML = "";
+    this.startTypewriter();
+    this.addKeyboardNavigation();
+  }
 
-const typeWriter = setInterval(() => {
-    if (i < content.length) {
-        container.innerHTML = content.slice(0, i) + '<span class="cursor">_</span>';
-        i++;
-    } else {
-        clearInterval(typeWriter);
-        container.innerHTML = content;
+  startTypewriter() {
+    this.intervalId = setInterval(() => {
+      if (this.currentIndex >= this.content.length) {
+        this.completeTypewriter();
+        clearInterval(this.intervalId);
+        return;
+      }
+
+      const ch = this.content[this.currentIndex];
+
+      if (ch === '<') {
+        let tagBuffer = ch;
+        this.currentIndex++;
+        while (
+          this.currentIndex < this.content.length &&
+          this.content[this.currentIndex] !== '>'
+        ) {
+          tagBuffer += this.content[this.currentIndex];
+          this.currentIndex++;
+        }
+        if (
+          this.currentIndex < this.content.length &&
+          this.content[this.currentIndex] === '>'
+        ) {
+          tagBuffer += '>';
+          this.currentIndex++;
+        }
+
+        this.currentContent += tagBuffer;
+        this.updateContent(this.currentContent);
+      } else {
+        this.currentContent += ch;
+        this.updateContent(this.currentContent);
+        this.currentIndex++;
+      }
+    }, this.typewriterSpeed);
+  }
+
+  updateContent(content) {
+    this.container.innerHTML = content + '<span class="cursor">_</span>';
+  }
+
+  completeTypewriter() {
+    clearInterval(this.intervalId);
+    this.container.innerHTML = this.content;
+    this.isComplete = true;
+    this.enhanceInteractivity();
+  }
+
+  enhanceInteractivity() {
+    const folderSpans = this.container.querySelectorAll('.tree li.folder > span');
+    folderSpans.forEach(span => {
+      span.style.cursor = 'pointer';
+      span.addEventListener('click', this.toggleFolder.bind(this));
+    });
+
+    const fileLinks = this.container.querySelectorAll('.tree li.file a');
+    fileLinks.forEach(link => {
+      link.addEventListener('click', this.handleFileClick.bind(this));
+    });
+  }
+
+  toggleFolder(event) {
+    const folderLi = event.target.closest('li.folder');
+    const childUl = folderLi.querySelector('ul');
+
+    if (childUl) {
+      const isHidden = childUl.style.display === 'none';
+      childUl.style.display = isHidden ? 'block' : 'none';
+
+      const span = folderLi.querySelector('span');
+      span.style.opacity = isHidden ? '1' : '0.6';
     }
-}, interval);
+  }
+
+  handleFileClick(event) {
+    event.preventDefault();
+    const fileName = event.target.textContent;
+    const fileUrl = event.target.href;
+    const span = event.target.closest('span');
+    span.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+      span.style.transform = '';
+    }, 100);
+  }
+
+  addKeyboardNavigation() {
+    document.addEventListener('keydown', (event) => {
+      if (!this.isComplete) return;
+      
+      switch(event.key) {
+        case 'Escape':
+          this.resetView();
+          break;
+        case 'r':
+        case 'R':
+          if (event.ctrlKey || event.metaKey) {
+            event.preventDefault();
+            this.restart();
+          }
+          break;
+      }
+    });
+  }
+
+  resetView() {
+    const hiddenUls = this.container.querySelectorAll('ul[style*="none"]');
+    hiddenUls.forEach(ul => {
+      ul.style.display = 'block';
+    });
+
+    const dimmedSpans = this.container.querySelectorAll('span[style*="opacity"]');
+    dimmedSpans.forEach(span => {
+      span.style.opacity = '';
+    });
+  }
+
+  restart() {
+    this.currentIndex = 0;
+    this.isComplete = false;
+    this.init();
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  new TreeRenderer();
+});
 </script>
 </body>
 </html>

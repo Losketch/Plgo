@@ -932,8 +932,13 @@ body {
 }
 
 .work h2 {
-	margin: 0 0 20px 0;
+	margin: 0;
 	font-size: 30px;
+	text-align: center
+}
+
+.work .slider--item {
+	margin: 0;
 	text-align: center
 }
 
@@ -980,28 +985,13 @@ body {
 	width: 150px;
 	height: 150px;
 	margin: 0 auto;
-	border-radius: 50%;
+	border-radius: 15px;
 	position: relative;
-	background-color: #0000004f;
-	background-image: url(../img/error.svg);
-    background-size: cover;
-}
-
-#error-message1, #error-message2, #error-message3 {
-	display: none;
-	position: absolute;
-	top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-	align-items: center;
-    justify-content: center;
-    border-radius: 50%;
 }
 
 .work--lockup .slider--item-image img {
 	width: 100%;
-	border-radius: 50%;
+	border-radius: 15px;
 }
 
 .work--lockup .slider--item-left {
@@ -1838,6 +1828,16 @@ body {
 @media (max-width: 767px) {
 	.outer-nav>li {
 		font-size: 44px
+	}
+	.contact {
+		background-position: 34%;
+	}
+	.contact--lockup .modal {
+		background-color: #0c0c0c82;
+		transition: all 0.3s ease;
+	}
+	.contact--lockup .modal:hover {
+		opacity: 0.02
 	}
 }
 
