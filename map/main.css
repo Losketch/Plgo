@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.tabs {
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+.tab-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tab-item {
+  margin: 0;
+}
+.tab-link {
+  display: block;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #495057;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  font-size: 14px;
+}
+.tab-link:hover {
+  background: #e9ecef;
+}
+.tab-link.active {
+  color: #007cba;
+  border-bottom-color: #007cba;
+  background: white;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: var(--nav-width, 200px) 4px 1fr;
+  height: calc(100vh - 35px);
+  position: relative;
+}
+.resizer {
+  background: #ddd;
+  cursor: col-resize;
+  transition: background-color 0.2s;
+  user-select: none;
+}
+.resizer:hover {
+  background: #007cba;
+}
+.resizer.dragging {
+  background: #007cba;
+}
+
+.nav {
+  overflow-y: auto;
+  background: #fff;
+  padding: 5px;
+  will-change: width;
+}
+.nav a {
+  display: block;
+  margin: 0;
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.nav a::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAAYdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuOWwzfk4AAAPGSURBVEhLrVVbSFRRFB3SXh/1oyWGmij4miGbUrRCQfNBVBhmidqPHzaZlCCJTh9SYuDrQxn8E9IvQURSwSxltCRIqEAlMrhjPnImnRl7OKXjPFbn7HHueB0telxY3HvuXmets9c5c0e2fOMunA4HHAxOpxOWp8+g26PA9G45dIRo2EwmqjvsdoLxTs1GTU48wn4FbObPpEFgfK4tM11X08BdsAwMQ+cbA51PNEHwiSQDcSIDF/pw5LTIIeyN8TLg2mTgXj2H5Qkz2DRR8InwMuD42tYJ3a4oD3cPN1j2cH5p8JsOOBw2O+bPXPEYUAcbBkyPa4oGfxqRGz/G3rCVs73g3N0xWGSZL5XeE2FIuPz3ERHYvMWiSldUvtHQZ9+E4eotF3JvY0F58e8jcmNd/wnTfnGuiEzLpEVgp+2fI3Ljs+YhhP91ijjXOj0jjund+jrmTl74P6eIcw0FJXCsronvOL4Pv4BteYcO/igixp1Vnof5gUYyj563jHfuYEOcDHZ5R8QNpg/EwqqTRiXBTgar428hiB3E0AlxWK1inQxOnKe6/pKKTou7thmcRwaL5wolBvx5qew+dPvYB+zgcXxp7ZDWbTbMHE1yLYCd/ZVHT8TaZogGc4FnvFtlRX4i7N9WJOIcq68nWIeeCGfCU2C3WCQcDo/BoVPsV3cLzh1a3QzH2ho+phSI4m4Y1bVeC5EYEKn8gSTrrbCvWGghW8UJ7L9gbfKdhO8xOMwM+KYyzJ++jO/aUclq+CZaHmsxd+ycyNsOC2evSTaca5hVzMD6/BWs2jEPhl/CPjMHuhjR9l6gdxLOdhgeg5NF6JrmpLttSoBMo9FAEAS0t7ejt7cXBoMBVVVVtILOzk5UVFRgaGiIJuj1etTU1KC2thZGoxF9fX0oKysTx/waGRlBZWUlOjo6yEiWmpqK0dFR5OfnIzAwEJOTkygqKkJTUxMyMzPJOD4+Hl1dXVAoFKirq0N1dTXi4uJQXl6OwsJCGickJGBgYACxsbFobW2FXC4nrmiQl5eHgIAAEg0JCUFycjJmZ2dpVRZ2DPv7+5GTkyO2n5aWhqysLDQ3N9M7rpOdnY2MjAyEhYVBqVSira0NsvT0dGqH3xsbG+Hn54fg4GCoVCrU19fDbDZDrVaDRxkZGYmpqSlMTEwgPDwcxcXFaGhowPj4OKKiomh+UFAQBgcHybikpASy7u5u+Pv7U4s8x5aWFoSGhsLEvj+8Ky5aWlqKdfZJ7unpoWgSExNJhEcQERGBpKQkaLVa4vA94Wa5ublMz4ifUD8KQdmvqRMAAAAASUVORK5CYII=") center center no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.nav a:hover {
+  background: #BFCDDB;
+}
+.nav a.active {
+  background: #0078D7;
+  color: #fff;
+}
+.main {
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.font-content {
+  display: none;
+}
+.font-content.active {
+  display: block;
+}
+
+section {
+  display: none;
+  margin-bottom: 2em;
+}
+section:target {
+  display: block;
+}
+section[id*="_blk_Undefined_Characters"] .codepoint {
+  background: linear-gradient(180deg, #EF786A, #DE6759);
+  color: #eee;
+}
+
+h2 {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+  font-size: 14px;
+}
+.glyph-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 60px);
+}
+.glyph-item {
+  text-align: center;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  background: #F3F3F3;
+  border-top: unset;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+/*.glyph-item:hover { transform:scale(1.08); box-shadow:0 2px 6px rgba(0, 0, 0, 0.2); }*/
+.glyph-item.active {
+  border: 1px solid #777;
+  border-top: unset;
+  background: #C5D9F0;
+}
+.glyph-item.active .glyph {
+  background: #D1E5FC;
+}
+.glyph {
+  font-size: 45px;
+  line-height: 1.75;
+  background: #FFF;
+  display: inline-block;
+  box-sizing: content-box;
+  margin-top: 1px;
+  min-width: 1px;
+  height: 81%;
+}
+.codepoint {
+  font-size: 12px;
+  color: #000;
+  background: linear-gradient(180deg, #BAD2FF, #A9C1FF);
+  line-height: 1.2;
+  border: 1px solid #ccc;
+  border-left: unset;
+  border-right: unset;
+}
+
+.pagination {
+  text-align: center;
+  margin: 10px 0;
+}
+.pagination button {
+  cursor: pointer;
+  border: unset;
+  background: unset;
+  color: #999;
+}
+.pagination button:hover {
+  background: #f0f0f0;
+  border-radius: 25px;
+}
+.pagination button.active {
+  color: rgba(0, 0, 0, .9);
+  font-weight: 700;
+}
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+
+@media only screen and (max-width: 530px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav {
+    overflow-x: auto;
+    height: 20vh;
+    min-height: 15vh;
+  }
+}

@@ -1,0 +1,58 @@
+/* Windows 10 风格滚动条 */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F0F0F0;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cdcdcd;
+  border-radius: 0;
+  border-right: 1px solid #fff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A6A6A6;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #606060;
+}
+
+/* 滚动条按钮（箭头） - 使用SVG */
+::-webkit-scrollbar-button:single-button {
+  background-color: #F0F0F0;
+  display: block;
+  height: 17px;
+  width: 15px;
+  border: none;
+  background-size: 6px 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* 向上箭头 */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'><path d='M6 4 3 2 0 4V3L3 0 6 3Z' fill='%23666'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  background-color: #DADADA;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'><path d='M6 4 3 2 0 4V3L3 0 6 3Z' fill='%23333'/></svg>");
+}
+
+/* 向下箭头 */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'><path d='M0 0 3 2 6 0V1L3 4 0 1Z' fill='%23666'/></svg>");
+}
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+  background-color: #DADADA;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'><path d='M0 0 3 2 6 0V1L3 4 0 1Z' fill='%23333'/></svg>");
+}
+
+/* 角落 */
+::-webkit-scrollbar-corner {
+  background: #f0f0f0;
+}

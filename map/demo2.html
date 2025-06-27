@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>可拖拽调整宽度示例</title>
+<style>
+  :root {
+    --nav-width: 200px;     /* 初始宽度 */
+  }
+  body, html { height:100%; margin:0; }
+
+  .container {
+    display: grid;
+    grid-template-columns: var(--nav-width) 5px 1fr; /* 中间 5px 给 resizer */
+    height: 100vh;
+  }
+  .nav {
+    background: #f0f0f0;
+    overflow: auto;
+  }
+  .resizer {
+    background: transparent;
+    cursor: ew-resize;
+    /* 可选：在 hover 时给个提示色 */
+  }
+  .resizer:hover {
+    background: rgba(0,0,0,0.1);
+  }
+  .main {
+    background: #fff;
+    overflow: auto;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <nav class="nav">
+    <!-- 原来 .nav 的内容 -->
+    <p>导航栏可以拖动这个边界来改变宽度</p>
+  </nav>
+  <div class="resizer" id="dragbar"></div>
+  <div class="main">
+    <!-- 原来 .main 的内容 -->
+    <p>主内容区域</p>
+  </div>
+</div>
+
+<script>
+  (function(){
+    const dragbar = document.getElementById('dragbar');
+    let startX, startWidth;
+
+    dragbar.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      startX = e.clientX;
+      // 读取当前的 nav 宽度
+      startWidth = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-width'));
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    });
+
+    function onMouseMove(e) {
+      const dx = e.clientX - startX;
+      let newWidth = startWidth + dx;
+      // 可以限制最小/最大宽度：
+      const min = 100, max = window.innerWidth * 0.8;
+      if (newWidth < min) newWidth = min;
+      if (newWidth > max) newWidth = max;
+      // 更新 CSS 变量
+      document.documentElement.style.setProperty('--nav-width', newWidth + 'px');
+    }
+
+    function onMouseUp() {
+      document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mouseup', onMouseUp);
+    }
+  })();
+</script>
+
+</body>
+</html>
