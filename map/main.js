@@ -4,7 +4,6 @@ function switchFont(fontId) {
   newContent.classList.add('active');
   document.querySelectorAll('.tab-link').forEach(t => t.classList.remove('active'));
   document.querySelector(`[onclick="switchFont('${fontId}')"]`).classList.add('active');
-  if (window.location.hash) history.replaceState(null, null, ' ');
 
   document.querySelectorAll('.nav a').forEach(n => n.classList.remove('active'));
   const firstNav = newContent.querySelector('.nav a');
@@ -27,8 +26,33 @@ function showPage(fontId, blockId, pageNum) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  const firstTab = document.querySelector('.tab-link');
-  if (firstTab) firstTab.click();
+  function activateByHash() {
+    const hash = window.location.hash;
+    if (!hash) return false;
+    const m = hash.slice(1).match(/^([^_]+_[^_]+)_blk_(.+)$/);
+    if (!m) return false;
+    const fontId = m[1];
+    const blockId = `${fontId}_blk_${m[2]}`;
+
+    const tabLink = document.querySelector(`[onclick="switchFont('${fontId}')"]`);
+    if (!tabLink) return false;
+    switchFont(fontId);
+
+    const navLink = document.querySelector(`a[href="${hash}"]`);
+    if (navLink) {
+      const nav = navLink.closest('.nav');
+      nav.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+      navLink.classList.add('active');
+      const section = document.getElementById(blockId);
+      if (section) section.scrollIntoView();
+    }
+    return true;
+  }
+
+  if (!activateByHash()) {
+    const firstTab = document.querySelector('.tab-link');
+    if (firstTab) firstTab.click();
+  }
 
   function initResizer() {
     const containers = document.querySelectorAll('.container');
